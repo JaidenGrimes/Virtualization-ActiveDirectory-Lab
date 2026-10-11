@@ -26,20 +26,20 @@ Configured an isolated NAT Network (`10.0.2.0/24`) with DHCP enabled to allow se
 - Created a dedicated Organizational Unit (`LabUsers`) using Active Directory Users and Computers (`dsa.msc`).
 - Wrote and executed a custom PowerShell script (`Create-ADUsers.ps1`) utilizing `Import-Csv` and `New-ADUser` to bulk-provision domain accounts (`jdoe`, `jsmith`, `mwilson`) with secure temporary passwords and unexpiring account policies.
 
-![Active Directory Users & Provisioned Users](screenshots/01_ActiveDirectory_Users_Provisioned.png)
+**_Active Directory Users & Provisioned Users_** <img width="1919" height="1011" alt="01_ActiveDirectory_Users_Provisioned" src="https://github.com/user-attachments/assets/f7c0f307-ad7b-4a07-bd91-c3159c5f05c2" />
 
 ### 4. Group Policy Management (`GPO-RestrictControlPanel`)
 - Authored a custom Group Policy Object (`GPO-RestrictControlPanel`) linked directly to the `LabUsers` OU via the Group Policy Management Console (`gpmc.msc`).
 - Configured user configuration administrative templates to disable access to the Control Panel and PC settings for standard domain users.
 
-![Group Policy Baseline Link](screenshots/02_GroupPolicy_GPO_ControlPanel_Restriction.png)
+**_Group Policy Baseline Link_** <img width="1919" height="1009" alt="02_GroupPolicy_GPO_ControlPanel_Restriction" src="https://github.com/user-attachments/assets/4eab9509-80ce-42d4-8f04-821012a46676" />
 
 ### 5. Client Domain Join & GPO Enforcement (`WIN11-CLI`)
 - Configured client network adapter with static DNS pointing to `10.0.2.10`.
 - Joined the Windows 11 virtual machine to `grimeslab.local` using domain administrator credentials.
 - Verified GPO enforcement by logging in as domain user `jdoe` and testing Control Panel restrictions.
 
-![Domain Join & GPO Enforcement](screenshots/03_Win11_GPO_Restriction_Enforcement.png)
+**_Domain Join & GPO Enforcement_** <img width="1023" height="538" alt="03_Win11_GPO_Restriction_Enforcement" src="https://github.com/user-attachments/assets/c119d4cc-bc93-4bac-8fe4-6f2ccfb7b1fd" />
 
 ---
 
